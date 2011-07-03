@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file.-->
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+    <include location="component://product/webapp/catalog/WEB-INF/controller.xml"/>
+    <description>Thefind Component Site Configuration File</description>
+    
+    <!-- Request Mappings -->
+    <request-map uri="main">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
+    <request-map uri="EditTheFindConfigs">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="EditTheFindConfigs"/>
+    </request-map>
+    <request-map uri="ProductsExportToTheFind">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="ProductsExportToTheFind"/>
+    </request-map>
+    <request-map uri="searchExportProductListToThefind">
+        <security https="true" auth="true"/>
+        <event type="java" path="org.ofbiz.thefind.TheFindSearchEvents" invoke="searchExportProductListToThefind"/>
+        <response name="success" type="view" value="ProductsExportToTheFind"/>
+        <response name="error" type="view" value="ProductsExportToTheFind"/>
+    </request-map>
+    <request-map uri="createTheFindConfig">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createTheFindConfig"/>
+        <response name="success" type="view" value="EditTheFindConfigs"/>
+        <response name="error" type="view" value="EditTheFindConfigs"/>
+    </request-map>
+    <request-map uri="updateTheFindConfig">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateTheFindConfig"/>
+        <response name="success" type="view" value="EditTheFindConfigs"/>
+        <response name="error" type="view" value="EditTheFindConfigs"/>
+    </request-map>
+    <request-map uri="deleteTheFindConfig">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="deleteTheFindConfig"/>
+        <response name="success" type="view" value="EditTheFindConfigs"/>
+        <response name="error" type="view" value="EditTheFindConfigs"/>
+    </request-map>
+    
+    <!-- View Mappings -->
+    <view-map name="main" type="screen" page="component://thefind/widget/ThefindScreens.xml#advancedsearch"/>
+    <view-map name="advancedsearch" type="screen" page="component://thefind/widget/ThefindScreens.xml#advancedsearch"/>
+    <view-map name="EditTheFindConfigs" type="screen" page="component://thefind/widget/ThefindScreens.xml#EditTheFindConfigs"/>
+    <view-map name="keywordsearch" type="screen" page="component://thefind/widget/ThefindScreens.xml#keywordsearch"/>
+    <view-map name="ProductsExportToTheFind" type="screen" page="component://thefind/widget/ThefindScreens.xml#ProductsExportToTheFind"/>
+</site-conf>

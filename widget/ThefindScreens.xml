@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="advancedsearch">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleAdvancedSearch"/>
+                <entity-condition entity-name="ProductCategory" list="productCategories">
+                    <condition-expr field-name="showInSelect" operator="not-equals" value="N"/>
+                    <order-by field-name="description"/>
+                </entity-condition>
+                <script location="component://product/webapp/catalog/WEB-INF/actions/find/advancedsearchoptions.groovy"/>
+                <script location="component://thefind/webapp/thefind/WEB-INF/actions/TheFindAdvancedSearch.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="CommonFindDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                            <html><html-template location="component://thefind/webapp/thefind/find/TheFindAdvancedSearch.ftl"/></html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="EditTheFindConfigs">
+        <section>
+            <actions>
+                <set field="titleProperty" value="TheFindConfiguration"/>
+                <set field="headerItem" value="TheFindConfigs"/>
+                <set field="productStoreId" from-field="parameters.productStoreId"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <include-form name="ListTheFindConfigs" location="component://thefind/widget/ThefindForms.xml"/>
+                        <screenlet id="add-gbs-configuration" title="${uiLabelMap.TheFindAddTheFindConfiguration}" collapsible="true">
+                            <include-form name="AddTheFindConfig" location="component://thefind/widget/ThefindForms.xml"/>
+                        </screenlet>     
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="keywordsearch">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PageTitleSearchResults"/>
+                <script location="component://product/webapp/catalog/WEB-INF/actions/find/keywordsearch.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="CommonFindDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <platform-specific>
+                            <html><html-template location="component://thefind/webapp/thefind/find/keywordsearch.ftl"/></html>
+                        </platform-specific>
+                        <platform-specific>
+                            <html><html-template location="component://thefind/webapp/thefind/find/thefindExportLink.ftl"/></html>
+                        </platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="ProductsExportToTheFind">
+        <section>
+            <actions>
+                <set field="headerItem" value="thefind"/>
+                <set field="titleProperty" value="PageTitleTheFindProductsExportToTheFind"/>
+                <script location="component://thefind/webapp/thefind/WEB-INF/actions/productsExportToThefind.groovy"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <screenlet title="${uiLabelMap.PageTitleTheFindProductsExportToTheFind}">
+                            <include-form name="ProductsExportToTheFind" location="component://thefind/widget/ThefindForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>

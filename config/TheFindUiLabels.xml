@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <property key="FormFieldTitle_actionType">
+        <value xml:lang="en">Action Type</value>
+        <value xml:lang="fr">Type d'action</value>
+        <value xml:lang="it">Tipo Azione</value>
+        <value xml:lang="th">ประเภทการปฏิบัติ</value>
+        <value xml:lang="zh">操作类型</value>
+    </property>
+    <property key="FormFieldTitle_countryCode">
+        <value xml:lang="en">Country Code</value>
+        <value xml:lang="fr">Code pays</value>
+        <value xml:lang="it">Codice Paese</value>
+        <value xml:lang="th">รหัสประเทศ</value>
+        <value xml:lang="zh">国家代码</value>
+    </property>
+    <property key="FormFieldTitle_testMode">
+        <value xml:lang="en">Test mode</value>
+        <value xml:lang="fr">Mode test</value>
+        <value xml:lang="it">In Modo Test</value>
+        <value xml:lang="th">วิธีการทดสอบ</value>
+        <value xml:lang="zh">测试状态</value>
+    </property>
+    <property key="FormFieldTitle_trackingCodeId">
+        <value xml:lang="en">Tracking Code Id</value>
+        <value xml:lang="fr">Réf. de code de traçage</value>
+        <value xml:lang="it">Codice Tracciatura</value>
+        <value xml:lang="th">Tracking Code Id</value>
+        <value xml:lang="zh">跟踪码标识</value>
+    </property>
+    <property key="FormFieldTitle_webSiteMountPoint">
+        <value xml:lang="en">Web Site Mount Point</value>
+        <value xml:lang="fr">Point de montage de site Web</value>
+        <value xml:lang="it">Mount Point Sito Web</value>
+        <value xml:lang="th">Web Site Mount Point</value>
+        <value xml:lang="zh">网站加载点</value>
+    </property>
+    <property key="FormFieldTitle_webSiteUrl">
+        <value xml:lang="en">Web Site Url</value>
+        <value xml:lang="fr">Url de site Web</value>
+        <value xml:lang="it">Url Sito Web</value>
+        <value xml:lang="th">Web Site Url</value>
+        <value xml:lang="zh">网站网址</value>
+    </property>
+    <property key="productsExportTothefind.exceptionCallingExportToThefind">
+        <value xml:lang="en">Exception during exporting product to Thefind.</value>
+        <value xml:lang="fr">Exception pendant l'exportation de l'article vers Thefind.</value>
+        <value xml:lang="it">Exception during exporting product to Thefind.</value>
+        <value xml:lang="th">ข้อยกเว้นระหว่างการส่งออกสินค้าถึงฐานข้อมูลสาธารณะ</value>
+        <value xml:lang="zh">导出产品到thefind时出错。</value>
+    </property>
+    <property key="productsExportTothefind.invalidCountryCode">
+        <value xml:lang="en">Country Code must be either US, UK or DE.</value>
+        <value xml:lang="fr">Code de pays doit être l'un ou l'autre US, UK ou DE</value>
+        <value xml:lang="it">Codice paese deve essere US, UK o DE.</value>
+        <value xml:lang="th">รหัสประเทศต้องเป็น US , UK หรือไม่ก็ DE</value>
+        <value xml:lang="zh">国家代码必须是US、UK或DE。</value>
+    </property>
+    <property key="PageTitleTheFindProductsExportToTheFind">
+        <value xml:lang="en">Export Products to TheFind</value>
+        <value xml:lang="fr">Exporter les articles vers TheFind</value>
+        <value xml:lang="it">Esportazioni Prodotti su TheFind</value>
+        <value xml:lang="th">การส่งออกสินค้าไปยังฐานข้อมูลสาธารณะ</value>
+        <value xml:lang="zh">导出产品到TheFind</value>
+    </property>
+    <property key="thefindsearchevents.no_results_found_probably_error_constraints">
+        <value xml:lang="en">No results found, probably because there was an error or were no constraints.</value>
+        <value xml:lang="fr">Aucun résultats trouvés, probablement parce qu'il y a eu une erreur ou il n'y avait pas de contraintes</value>
+        <value xml:lang="it">No results found, probably because there was an error or were no constraints.</value>
+        <value xml:lang="th">ไม่พบผลลัพธ์, บางทีเพราะว่ามีข้อผิดพลาดหรือไม่มีข้อจำกัด</value>
+        <value xml:lang="zh">没有找到结果，可能是因为有错误或没有约束条件。</value>
+    </property>
+    <property key="thefindsearchevents.error_getting_search_results">
+        <value xml:lang="en">Error getting search results: ${errSearchResult}.</value>
+        <value xml:lang="fr">Erreur d'obtention des résultats de recherche: ${errSearchResult}.</value>
+        <value xml:lang="it">Error getting search results: ${errSearchResult}.</value>
+        <value xml:lang="th">ผิดพลาดการเรียกผลลัพธ์ที่ได้จากการค้นหา: ${errSearchResult}.</value>
+        <value xml:lang="zh">得到搜索结果时出错：${errSearchResult}。</value>
+    </property>
+    <property key="thefindsearchevents.error_getting_search_results">
+        <value xml:lang="en">Error getting search results: ${errSearchResult}.</value>
+        <value xml:lang="fr">Erreur d'obtention des résultats de recherche: ${errSearchResult}.</value>
+        <value xml:lang="it">Error getting search results: ${errSearchResult}.</value>
+        <value xml:lang="th">ผิดพลาดการเรียกผลลัพธ์ที่ได้จากการค้นหา: ${errSearchResult}.</value>
+        <value xml:lang="zh">得到搜索结果时出错：${errSearchResult}。</value>
+    </property>
+    <property key="thefindsearchevents.successMessage">
+        <value xml:lang="en">The feed file has been exported successfully.</value>
+    </property>
+    <property key="thefindExportUnableToReadFromProduct">
+        <value xml:lang="en">Unable to read from product entity: </value>
+        <value xml:lang="it">Non è possibile leggere dall'entità product: </value>
+    </property>
+    <property key="TheFindCompanyName">
+        <value xml:lang="en">TheFind</value>
+    </property>
+    <property key="TheFindConfiguration">
+        <value xml:lang="en">TheFind Configurations</value>
+        <value xml:lang="it">Configurazioni TheFind</value>
+    </property>
+    <property key="TheFindExportToTheFind">
+        <value xml:lang="en">Export To TheFind</value>
+        <value xml:lang="fr">Exporter vers TheFind</value>
+        <value xml:lang="it">Esporta Su TheFind</value>
+        <value xml:lang="th">การส่งออกถึงฐานข้อมูลสาธารณะ</value>
+        <value xml:lang="zh">导出到TheFind</value>
+    </property>
+    <property key="TheFindAddTheFindConfiguration">
+        <value xml:lang="en">Add TheFind Configuration</value>
+        <value xml:lang="it">Aggiungi configurazione a TheFind</value>
+    </property>
+    <property key="TheFindExportCountryCode">
+        <value xml:lang="en">Select your country destination</value>
+        <value xml:lang="fr">Sélectionner votre pays de destination</value>
+        <value xml:lang="it">Seleziona il paese di destinazione</value>
+        <value xml:lang="th">เลือกประเทศเป้าหมายของคุณ</value>
+        <value xml:lang="zh">选择你的国家和目标</value>
+    </property>
+    <property key="TheFindExportCountryCodeDE">
+        <value xml:lang="en">DE - euro</value>
+        <value xml:lang="fr">DE- euro</value>
+        <value xml:lang="it">DE - euro</value>
+        <value xml:lang="th">DE - euro</value>
+        <value xml:lang="zh">DE - 欧元</value>
+    </property>
+    <property key="TheFindExportCountryCodeGB">
+        <value xml:lang="en">UK - £</value>
+        <value xml:lang="fr">UK - £</value>
+        <value xml:lang="it">UK - £</value>
+        <value xml:lang="th">UK - £</value>
+    </property>
+    <property key="TheFindExportCountryCodeIT">
+        <value xml:lang="en">IT - euro</value>
+        <value xml:lang="fr">IT - euro</value>
+        <value xml:lang="it">IT - euro</value>
+        <value xml:lang="th">IT - euro</value>
+        <value xml:lang="zh">IT - 欧元</value>
+    </property>
+    <property key="TheFindExportCountryCodeUS">
+        <value xml:lang="en">US - $</value>
+        <value xml:lang="fr">US - $</value>
+        <value xml:lang="it">US - $</value>
+        <value xml:lang="th">US - $</value>
+    </property>
+    <property key="TheFindViewPermissionError">
+        <value xml:lang="en">You do not have permission to view this page. ("THEFIND_VIEW" needed)</value>
+        <value xml:lang="fr">Vous n'avez pas la permission de voir cette page (nécessite l'autorisation "THEFIND_VIEW" )</value>
+        <value xml:lang="it">Tu non sei autorizzato per vedere questa pagina. (necessario permesso "THEFIND_VIEW")</value>
+        <value xml:lang="th">คุณไม่มีการอนุญาตให้แสดงหน้านี้. (ต้องการ "THEFIND_VIEW")</value>
+        <value xml:lang="zh">你没有浏览这个页面的权限(需要THEFIND_VIEW)。</value>
+    </property>
+</resource>

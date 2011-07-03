@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ofbiz-component name="thefind"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-component.xsd">
+
+    <resource-loader name="main" type="component"/>
+
+    <classpath type="jar" location="build/lib/*"/>    
+    <!-- place the config directory on the classpath to access configuration files -->
+    <classpath type="dir" location="config"/>
+    <!-- commenting it down as now we mention the component specific patch in the controller request entry -->
+    <classpath type="dir" location="script"/>   
+
+    <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
+    <!--<entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/>-->
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/TheFindSecurityData.xml"/>
+    <entity-resource type="data" reader-name="demo" loader="main" location="data/DemoTheFindData.xml"/> 
+
+    <service-resource type="model" loader="main" location="servicedef/services.xml"/> 
+    <!--<service-resource type="eca" loader="main" location="servicedef/secas.xml"/>-->
+
+    <webapp name="thefind"
+        title="TheFind"
+        server="default-server"
+        location="webapp/thefind"
+        base-permission="OFBTOOLS"
+        mount-point="/thefind"
+        app-bar-display="true"/>
+
+</ofbiz-component> 

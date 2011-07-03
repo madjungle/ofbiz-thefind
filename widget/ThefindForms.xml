@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+    <form name="ListTheFindConfigs" type="list"  list-name="thefindConfigs"  target="updateTheFindConfig"
+        odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+        <actions>
+            <entity-condition entity-name="TheFindConfig">
+                <order-by field-name="productStoreId"/>
+            </entity-condition>
+        </actions>
+        <auto-fields-service service-name="updateTheFindConfig"/>
+        <field name="productStoreId"><display/></field>
+        <field name="deleteTheFindConfig" title="" widget-style="buttontext">
+            <hyperlink target="deleteTheFindConfig" description="${uiLabelMap.CommonDelete}" also-hidden="false">
+                <parameter param-name="productStoreId"/>
+            </hyperlink>
+        </field>
+        <field name="theFindPassword"><password/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit button-type="button"/></field>
+    </form>
+    
+    <form name="AddTheFindConfig" type="single" target="createTheFindConfig" title="">
+        <auto-fields-service service-name="createTheFindConfig"/>
+        <field name="productStoreId" required-field="true">
+            <drop-down allow-empty="false">
+                <option key="" description="- ${uiLabelMap.CommonSelectAny} -"/>
+                <entity-options entity-name="ProductStore" description="${storeName} [${productStoreId}]">
+                    <entity-order-by field-name="storeName"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="hostname" required-field="true"><text/></field>
+        <field name="localFilename" required-field="true"><text/></field>
+        <field name="remoteFilename" required-field="true"><text/></field>
+        <field name="theFindUsername" required-field="true"><text/></field>
+        <field name="theFindPassword" required-field="true"><password/></field>
+        <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+    
+    <form id="productsExportToTheFind" name="ProductsExportToTheFind" type="single" target="searchExportProductListToThefind"
+        header-row-style="header-row" default-table-style="basic-table">
+        <field name="productStoreId"><hidden/></field>
+        <field name="selectResult"><hidden/></field>
+        <field name="countryCode" tooltip="${uiLabelMap.TheFindExportCountryCode}">
+            <drop-down no-current-selected-key="US">
+                <option key="US" description="${uiLabelMap.TheFindExportCountryCodeUS}"/>
+                <option key="GB" description="${uiLabelMap.TheFindExportCountryCodeGB}"/>
+                <option key="DE" description="${uiLabelMap.TheFindExportCountryCodeDE}"/>
+                <option key="IT" description="${uiLabelMap.TheFindExportCountryCodeIT}"/>
+            </drop-down>
+        </field>
+        <!--<field name="webSiteId" event="onchange" action="javascript:$('productsExportToTheFind').action='${persistAction}';$('productsExportToTheFind').submit();">
+            <drop-down current="selected">
+                <list-options list-name="webSiteList" key-name="webSiteId" description="${siteName}[${webSiteId}]"/>
+            </drop-down>
+        </field>-->
+        <field name="webSiteUrl" required-field="true"><text size="50" maxlength="250" default-value="${webSiteUrl}"/></field>
+        <field name="imageUrl"><text size="50" maxlength="250" default-value="${webSiteUrl}"/></field>
+        <field name="webSiteMountPoint"><text size="30" maxlength="30" default-value="ecommerce"/></field>
+        <field name="submitButton" title="${uiLabelMap.TheFindExportToTheFind}"><submit button-type="button"/></field>
+    </form>
+</forms>

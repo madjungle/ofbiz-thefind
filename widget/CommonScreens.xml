@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+    <screen name="main-decorator">
+        <!-- The main-decorator screen 'wraps' or 'decorates' all of the screens in the
+            practice component. It is also decorated - by the GlobalDecorator screen. -->
+        <section>
+            <actions>
+                <!-- base/top/most specific map first, then more common map added for shared labels.
+                    Setting things up this way enables a component to redefine the more common
+                    UI labels. -->
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="TheFindUiLabels" map-name="uiLabelMap" global="true"/>
+                <!-- The layoutSettings field is a Map that is used to pass variables and layout
+                    information to the GlobalDecorator and any templates that it uses. -->
+                <set field="layoutSettings.companyName" from-field="uiLabelMap.TheFindCompanyName" global="true"/>
+                <set field="activeApp" value="thefind" global="true"/>
+                <set field="applicationMenuName" value="TheFindAppBar" global="true"/>
+                <set field="applicationMenuLocation" value="component://thefind/widget/ThefindMenus.xml" global="true"/>
+            </actions>
+            <widgets>
+                <include-screen name="ApplicationDecorator" location="component://commonext/widget/CommonScreens.xml"/>
+            </widgets>
+        </section>
+    </screen>
+    
+    <screen name="CommonFindDecorator">
+        <section>
+            <actions>
+                <set field="headerItem" value="thefind"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="THEFIND" action="_VIEW"/>
+                            </condition>
+                            <widgets>
+                                <decorator-section-include name="body"/>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.TheFindViewPermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+</screens>    
